@@ -1,3 +1,5 @@
+THIS FORK FOR DJANGO 2 ONLY
+
 django-content-gallery
 ======================
 
@@ -35,7 +37,10 @@ Requirements
 	the PATH. These libraries are required by the **python-magic** package and could be
 	downloaded on the `File for Windows <http://gnuwin32.sourceforge.net/packages/file.htm>`_
 	official page.
+        OSX users requires xcode command lines tools - brew will warn you if not already installed::
 
+    		brew install libmagic
+    
 
 Installation
 ============
