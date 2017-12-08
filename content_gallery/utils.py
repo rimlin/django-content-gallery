@@ -5,7 +5,12 @@ import io
 from PIL import Image
 import magic
 
-from django.core import urlresolvers
+try:
+    from django.core import urlresolvers.reverse
+except:
+    # django 2
+    from django.urls import reverse
+    
 from django.core.files import uploadedfile
 from django.conf import settings as django_settings
 
@@ -18,7 +23,7 @@ def get_choices_url_pattern():
     """
     # get 'choices' URL using 'reverse',
     # the pattern requires one numeric argument
-    choices_url = urlresolvers.reverse('content_gallery:choices', args=(0,))
+    choices_url = reverse('content_gallery:choices', args=(0,))
     # remove argument (last digits in the URL with '/' optionally)
     return re.sub(r'\d+/?$', '', choices_url)
 
@@ -29,7 +34,7 @@ def get_gallery_data_url_pattern():
     """
     # get 'gallery_data' using 'reverse',
     # the pattern requires two words and one number as arguments
-    choices_url = urlresolvers.reverse(
+    choices_url = reverse(
         'content_gallery:gallery_data',
         args=(
             'app_label',
@@ -47,7 +52,7 @@ def get_admin_new_image_preview_url_pattern():
     """
     # get 'gallery_new_image_preview' using 'reverse',
     # the pattern requires one numeric argument
-    preview_url = urlresolvers.reverse(
+    preview_url = reverse(
         'admin:gallery_new_image_preview',
          args=(0,)
     )
