@@ -5,11 +5,7 @@ import io
 from PIL import Image
 import magic
 
-try:
-    from django.core import urlresolvers.reverse
-except:
-    # django 2
-    from django.urls import reverse
+from django.urls import reverse
     
 from django.core.files import uploadedfile
 from django.conf import settings as django_settings
