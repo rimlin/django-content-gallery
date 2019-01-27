@@ -114,6 +114,9 @@ class ImageAdmin(admin.ModelAdmin):
     class Media:
         js = (
             utils.create_static_url(
+                "admin/js/jquery.init.js"
+            ),
+            utils.create_static_url(
                 "content_gallery/js/content-gallery-view.js"
             ),
             utils.create_static_url(
