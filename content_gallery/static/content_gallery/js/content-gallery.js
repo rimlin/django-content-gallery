@@ -87,4 +87,4 @@
 
     ContentGallery.gallery = gallery;
 
-})(jQuery);
+})(django.jQuery);
