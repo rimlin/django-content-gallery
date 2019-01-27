@@ -72,4 +72,4 @@
 
         $(".content-gallery-close").click(galleryView.hide);
     });
-})(jQuery);
+})(django.jQuery);
