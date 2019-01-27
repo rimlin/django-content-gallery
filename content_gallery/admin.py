@@ -113,7 +113,8 @@ class ImageAdmin(admin.ModelAdmin):
 
     class Media:
         js = (
-           "admin/js/jquery.init.js",
+			"admin/js/vendor/jquery/jquery.min.js",
+           	"admin/js/jquery.init.js",
             utils.create_static_url(
                 "content_gallery/js/content-gallery-view.js"
             ),
