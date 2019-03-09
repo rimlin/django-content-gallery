@@ -58,6 +58,8 @@ class Image(models.Model):
     between other images and the link to the object the image is related to.
     """
 
+	title_ru = models.TextField(default = '', blank=True, null=True)
+	title_en = models.TextField(default = '', blank=True, null=True)
     image = fields.GalleryImageField(upload_to=settings.CONF['path'])
     position = models.IntegerField(default=0, db_index=True)
     content_type = models.ForeignKey(ContentType, on_delete=models.CASCADE)

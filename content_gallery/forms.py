@@ -55,7 +55,7 @@ class ImageAdminForm(forms.ModelForm):
         model = models.Image
         # the form does not contain the 'position' field
         # since its value should be set automatically
-        fields = ('image', 'content_type', 'object_id')
+        fields = ('image', 'title_ru', 'title_en', 'content_type', 'object_id')
         widgets = {
             'image': widgets.ImageWidget,
             'content_type': widgets.ContentTypeSelect,
