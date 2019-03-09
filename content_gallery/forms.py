@@ -55,11 +55,13 @@ class ImageAdminForm(forms.ModelForm):
         model = models.Image
         # the form does not contain the 'position' field
         # since its value should be set automatically
-        fields = ('image', 'title_ru', 'title_en', 'content_type', 'object_id')
+        fields = ('image', 'content_type', 'object_id')
         widgets = {
             'image': widgets.ImageWidget,
             'content_type': widgets.ContentTypeSelect,
             'object_id': widgets.ObjectIdSelect,
+            'title_ru': forms.TextField(default = '', blank=True, null=True),
+            'title_en': forms.TextField(default = '', blank=True, null=True),
         }
 
 
@@ -78,5 +80,7 @@ class ImageAdminInlineForm(forms.ModelForm):
                     'class': 'content-gallery-image-position'
                 }
             ),
-            'image': widgets.ImageInlineWidget()
+            'image': widgets.ImageInlineWidget(),
+            'title_ru': forms.TextField(default = '', blank=True, null=True),
+            'title_en': forms.TextField(default = '', blank=True, null=True),
         }
