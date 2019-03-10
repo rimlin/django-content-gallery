@@ -81,6 +81,6 @@ class ImageAdminInlineForm(forms.ModelForm):
                 }
             ),
             'image': widgets.ImageInlineWidget(),
-            'title_ru': forms.CharField(widget=forms.Textarea, default = '', blank=True, null=True),
-            'title_en': forms.CharField(widget=forms.Textarea, default = '', blank=True, null=True),
+            'title_ru': forms.CharField(widget=forms.Textarea),
+            'title_en': forms.CharField(widget=forms.Textarea),
         }
