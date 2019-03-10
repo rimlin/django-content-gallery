@@ -60,8 +60,8 @@ class ImageAdminForm(forms.ModelForm):
             'image': widgets.ImageWidget,
             'content_type': widgets.ContentTypeSelect,
             'object_id': widgets.ObjectIdSelect,
-            'title_ru': forms.TextInput,
-            'title_en': forms.TextInput,
+            'title_ru': forms.CharField(widget=forms.Textarea),
+            'title_en': forms.CharField(widget=forms.Textarea),
         }
 
 
@@ -81,6 +81,6 @@ class ImageAdminInlineForm(forms.ModelForm):
                 }
             ),
             'image': widgets.ImageInlineWidget(),
-            'title_ru': forms.TextInput,
-            'title_en': forms.TextInput,
+            'title_ru': forms.CharField(widget=forms.Textarea),
+            'title_en': forms.CharField(widget=forms.Textarea),
         }
